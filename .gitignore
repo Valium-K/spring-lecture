@@ -1,4 +1,5 @@
 HELP.md
+push.bat
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -35,5 +36,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-*.bat
