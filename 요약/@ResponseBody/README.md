@@ -1,6 +1,6 @@
 @ResponseBody 사용 원리
 ====================
-<img src="/responsebody.png" width="450px" height="300px" alt="responsebody.png"></img><br/>
+![ResponseBody](responsebody.png)
 
 * `@ResponseBody`를 사용
 	* HTTP의 BODY에 문자 내용을 직접 반환
