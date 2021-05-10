@@ -9,4 +9,13 @@ TestCase 관련 요약
 		// 각 TestCase가 실행된 후 이 메소드가 실행된다.
 	}
 	```
+* 일반적으로 하나의 Testcase는 given - when - then의 구조를 가진다.
+	``` java
+	public void 테스트케이스의_구조 {
+		// given - 주어진 데이터
 
+		// when - 실행 했을 때
+
+		// then - 기대하는 결과값
+	}
+	```
