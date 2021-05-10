@@ -11,21 +11,21 @@
    
 2. 자바 코드로 직접 스프링 빈 등록
     * 설정파일을 만들어 직접 등록한다.(@Controller 애노테이션은 꼭 필요함)
-    ```java
-    @Configuration
-    public class SpringConfig {
-   
-        @Bean
-        public MemberService memberService() {
-            return new MemberService(memberRepository());
+        ```java
+        @Configuration
+        public class SpringConfig {
+       
+            @Bean
+            public MemberService memberService() {
+                return new MemberService(memberRepository());
+            }
+    
+            @Bean
+            public MemberRepository memberRepository() {
+                return new MemoryMemberRepository();
+            }
         }
-
-        @Bean
-        public MemberRepository memberRepository() {
-            return new MemoryMemberRepository();
-        }
-    }
-    ```
+        ```
    
 * 참고
    * XML 설정방식은 최근 잘 사용하지 않음.

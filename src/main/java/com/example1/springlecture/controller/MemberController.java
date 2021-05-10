@@ -1,14 +1,19 @@
 package com.example1.springlecture.controller;
 
+import com.example1.springlecture.domain.Member;
 import com.example1.springlecture.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 
 // @Controller가 붙은 객체는 스프링 실행 시 스프링컨테이너에 생성해 추가*관리한다.
 // 이를 Spring Container에서 Spring Bean이 관리된다 라고한다.
 @Controller
 public class MemberController {
-
 
     private final MemberService memberService;
 
@@ -17,5 +22,21 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+    }
+
+    @GetMapping("/members/new")
+    public String createForm() {
+        return "/members/createMemberForm.html";
+    }
+
+    @PostMapping("/members/new")
+    public String create(MemberForm memberForm) {
+        Member member = new Member();
+        member.setName(memberForm.getName());
+
+        System.out.println("name = " + member.getName());
+        memberService.join(member);
+
+        return "/members/createdMember";
     }
 }
