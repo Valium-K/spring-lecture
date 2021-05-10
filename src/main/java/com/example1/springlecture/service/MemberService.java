@@ -2,14 +2,20 @@ package com.example1.springlecture.service;
 
 import com.example1.springlecture.domain.Member;
 import com.example1.springlecture.repository.MemberRepository;
-import com.example1.springlecture.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
+// 스프링 컨테이너에 등록
+// @Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    // 생성시 의존성 주입
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

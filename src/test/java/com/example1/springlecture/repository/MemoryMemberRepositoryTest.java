@@ -4,11 +4,13 @@ import com.example1.springlecture.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
+// 스프링 컨테이너에 등록
 class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 

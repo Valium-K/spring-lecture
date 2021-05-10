@@ -1,6 +1,7 @@
 package com.example1.springlecture.repository;
 
 import com.example1.springlecture.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
