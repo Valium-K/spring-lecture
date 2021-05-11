@@ -1,6 +1,7 @@
 View와 Controller 사이 데이터와 흐름
 ================================
 
+## 회원등록
 ### Home.html
 ```html
 <!-- home 화면에서 회원가입을 하면 /members/new 경로를-->
@@ -45,7 +46,7 @@ public class MemberController {
 ```
 
 ### MemberController
-``` java
+```java
 @Controller
 public class MemberController {
 
@@ -92,4 +93,49 @@ public class MemberForm {
 
 -------------------
 
+## 회원 조회
+### MemberController
+```java
+@Controller
+public class MemberController {
+
+    // ...
+    
+    @GetMapping("/members")
+    public String list(Model model) {
+        List<Member> memberList = memberService.findMembers();
+        model.addAttribute("members", memberList);
+
+        // attribute가 추가된 model을 같이 넘겨줌 
+        return "members/memberList";
+    }
+    
+    // ...
+}
+```
+
+### memberList.html
+
+```html
+<body>
+    <div class="container">
+        <div>
+            <table>
+                <thead>
+                    <tr><th>#</th><th>이름</th></tr>
+                </thead>
+                <tbody>
+                    <tr th:each="member : ${members}">
+                        <!-- 프로퍼티 접근 방식처럼 쓰지만 -->
+                        <!-- 실제로는 getter를 이용해 값을 받아온다. -->
+                        <td th:text="${member.id}"></td>
+                        <td th:text="${member.name}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+```
 

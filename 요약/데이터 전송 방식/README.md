@@ -1,12 +1,10 @@
-package com.example1.springlecture.controller;
+데이터 전송 방식
+=============
+### 정적 콘텐츠 방식
+* resources/static 폴더에 정적 콘텐츠를 내려준다.
 
-import org.springframework.boot.context.properties.bind.DefaultValue;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
+### MVC 방식 및 API 방식
+```java
 @Controller
 public class HelloController {
 
@@ -16,7 +14,7 @@ public class HelloController {
         return "hello";
     }
 
-    // mvc방식 - template엔진 이용
+    // mvc방식 - template 엔진 이용
     @GetMapping("hello-mvc")
     public String helloMve(@RequestParam(value = "name", required = false) String name, Model model) {
         model.addAttribute("name", name);
@@ -45,12 +43,8 @@ public class HelloController {
     public static class Hello {
         private String name;
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
+        public String getName() { return name; }
+        public void setName(String name) { this.name = name; }
     }
 }
+```
