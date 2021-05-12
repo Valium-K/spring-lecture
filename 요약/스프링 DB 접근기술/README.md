@@ -48,6 +48,9 @@
 * 순수 JDBC의 반복적 코드를 대부분 제거해준다.
 * 그러나 Query는 직접 작성 해야한다.
 
+### 사용예제
+* [repository/JDBCTemplateMember](src/main/java/com/example1/springlecture/repository/JDBCTemplateMemberRepository.java)
+* [service/SpringConfig](src/main/java/com/example1/springlecture/service/MemberService.java) - JDBC 주석
 ## JPA
 * 기존 반복코드 + SQL문도 직접 만들어 실행해준다.
 * 객체 중심의 설계로 전환가능하다.
@@ -70,6 +73,13 @@
     spring.jpa.hibernate.ddl-auto=none
     ```
   ### 사용 예제
-    * [Member.class](/src/main/java/com/example1/springlecture/domain/Member.java)
-    * [JpaMemberRepository]()
-  
+    * [domain/Member](/src/main/java/com/example1/springlecture/domain/Member.java)
+    * [repository/JpaMemberRepository](src/main/java/com/example1/springlecture/repository/JpaMemberRepository.java)
+    * [service/MemberService](src/main/java/com/example1/springlecture/service/MemberService.java)
+    * [service/SpringConfig](src/main/java/com/example1/springlecture/service/MemberService.java) 
+
+## Spring JPA
+* 스프링에서 JPA 사용을 더욱 간결하게 해준다.
+* JPA 설정을 그대로 사용
+* 어디까지나 JPA 기반이므로 JPA를 이해한 후 사용하는것을 추천
+* CRUD기능도 Spring JPA가 제공하고, Repository의 구현클래스 없이 인터페이스 만으로 개발가능.

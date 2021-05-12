@@ -12,6 +12,8 @@ import java.util.Optional;
 
 // 스프링 컨테이너에 등록
 // @Service
+
+// JPA의 트랙젝션관리
 @Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
