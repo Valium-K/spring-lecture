@@ -1,12 +1,11 @@
 package com.example1.springlecture.service;
 
-import com.example1.springlecture.repository.JDBCMemberRepository;
-import com.example1.springlecture.repository.MemberRepository;
-import com.example1.springlecture.repository.MemoryMemberRepository;
+import com.example1.springlecture.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 
@@ -15,11 +14,20 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
-    private DataSource dataSource;
+//    // JDBC를 위한 의존성
+//    private DataSource dataSource;
+//
+//    @Autowired
+//    public SpringConfig(DataSource dataSource) {
+//        this.dataSource = dataSource;
+//    }
+
+    // JPA를 위한 의존성
+    private EntityManager entityManager;
 
     @Autowired
-    public SpringConfig(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public SpringConfig(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
     @Bean
@@ -29,7 +37,9 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        //return new MemoryMemberRepository();
-        return new JDBCMemberRepository(dataSource);
+        // return new MemoryMemberRepository();
+        // return new JDBCMemberRepository(dataSource);
+        // return new JDBCTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(entityManager);
     }
 }

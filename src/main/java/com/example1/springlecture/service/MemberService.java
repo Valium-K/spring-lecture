@@ -4,6 +4,7 @@ import com.example1.springlecture.domain.Member;
 import com.example1.springlecture.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import java.util.Optional;
 
 // 스프링 컨테이너에 등록
 // @Service
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 

@@ -7,6 +7,7 @@
         * `@Service`
         * `@Repository`
     * 컴포넌트간 연결은 생성자에 `@Autowired`를 사용하여 자동 DI한다.
+        * 참고로 클래스에 생성자가 1개인 경우에는 `@Autowired`를 생략 가능하다.
     * 컴포넌트 스캔은 `@SpringBootApplication`가 있는 해당 패키지와 그 하위 경로만 스캔한다.
    
 2. 자바 코드로 직접 스프링 빈 등록
