@@ -70,6 +70,6 @@
     spring.jpa.hibernate.ddl-auto=none
     ```
   ### 사용 예제
-    * [Member.class](java/com/example1/springlecture/domain/Member.java)
+    * [Member.class](/src/main/java/com/example1/springlecture/domain/Member.java)
     * [JpaMemberRepository]()
   
