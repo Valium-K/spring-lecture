@@ -12,6 +12,8 @@ import java.util.Optional;
 
 // 스프링 컨테이너에 등록
 // @Service
+// service는 repository의 기능을 controller와 중간에서 연결해주는 역할이다.
+// 변수명이나 메소드명은 전문용어가 아닌 쉽게 통용되는 단어로 구성해야한다.
 
 // JPA의 트랙젝션관리
 @Transactional

@@ -1,9 +1,11 @@
 package com.example1.springlecture.service;
 
+import com.example1.springlecture.aop.TimeTraceAop;
 import com.example1.springlecture.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 
 // 컴포넌트 스캔이 아닌 직접 스프링 빈을 등록해 설정함 (하지만 Controller는 애노테이션을 달아야함)
@@ -11,6 +13,23 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfig {
 
+    private final MemberRepository memberRepository;
+
+    @Autowired
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    // Spring Jpa를 사용하는 member
+    @Bean
+    public MemberService memberService() {
+        return new MemberService(memberRepository);
+    }
+
+//    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
 //    // JDBC를 위한 의존성
 //    private DataSource dataSource;
 //
@@ -27,20 +46,7 @@ public class SpringConfig {
 //        this.entityManager = entityManager;
 //    }
 
-    private final MemberRepository memberRepository;
-
-    @Autowired
-    public SpringConfig(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
-
-    // Spring Jpa를 사용하는 member
-    @Bean
-    public MemberService memberService() {
-        return new MemberService(memberRepository);
-    }
-
-//    // 직접 Repository를 추가
+//    // MemoryRepository, JDBC, JDBCTemplate를 위해 직접 Repository를 추가
 //    @Bean
 //    public MemberService memberService() {
 //        return new MemberService(memberRepository());
