@@ -49,8 +49,8 @@
 * 그러나 Query는 직접 작성 해야한다.
 
 ### 사용예제
-* [repository/JDBCTemplateMember](src/main/java/com/example1/springlecture/repository/JDBCTemplateMemberRepository.java)
-* [service/SpringConfig](src/main/java/com/example1/springlecture/service/MemberService.java) - JDBC 주석
+* [repository/JDBCTemplateMember](/src/main/java/com/example1/springlecture/repository/JDBCTemplateMemberRepository.java)
+* [service/SpringConfig](/src/main/java/com/example1/springlecture/service/MemberService.java) - JDBC 주석
 ## JPA
 * 기존 반복코드 + SQL문도 직접 만들어 실행해준다.
 * 객체 중심의 설계로 전환가능하다.
@@ -74,9 +74,9 @@
     ```
   ### 사용 예제
     * [domain/Member](/src/main/java/com/example1/springlecture/domain/Member.java)
-    * [repository/JpaMemberRepository](src/main/java/com/example1/springlecture/repository/JpaMemberRepository.java)
-    * [service/MemberService](src/main/java/com/example1/springlecture/service/MemberService.java)
-    * [service/SpringConfig](src/main/java/com/example1/springlecture/service/MemberService.java) 
+    * [repository/JpaMemberRepository](/src/main/java/com/example1/springlecture/repository/JpaMemberRepository.java)
+    * [service/MemberService](/src/main/java/com/example1/springlecture/service/MemberService.java)
+    * [service/SpringConfig](/src/main/java/com/example1/springlecture/service/MemberService.java) 
 
 ## Spring JPA
 * 스프링에서 JPA 사용을 더욱 간결하게 해준다.
