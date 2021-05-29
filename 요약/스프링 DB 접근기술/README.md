@@ -7,7 +7,8 @@
 
 ## H2
 * 간단한 학습용
-* 첫 실행시 JDBC URL을 설정 후 DB를 만들고 이후 접속시  
+* 첫 실행시 JDBC URL을 설정 후 DB를 만들고     
+    로컬 DB생성: `jdbc:h2:[만들 DB 경로]` 이후 접속시     
     `jdbc:h2:tcp://localhost/[만든 DB 경로]`로 설정 후 접속해야한다.
 
 # ORM
